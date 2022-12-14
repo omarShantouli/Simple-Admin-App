@@ -1,0 +1,28 @@
+.login{
+    background-color: #2E0259;
+    
+}
+
+.login-btn{
+    background-color: #9F5CCC;
+    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.create-new-account{
+    color: #8247B3;
+    background-color: #2E0259;
+}
+
+input{
+    background-color: #F1E1FC;
+    height: 2rem;
+    outline: none;
+}
+
+@media all and (max-width: 1204px){
+    .login {
+        min-width: 250px;
+    }
+}
