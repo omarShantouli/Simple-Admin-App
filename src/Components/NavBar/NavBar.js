@@ -28,7 +28,7 @@ export default function NavBar() {
                 <div className='ms-auto me-4 border-0  pt-3 pb-2 text-white h6'>
                 <button className='border-0 pt-2 text-white h6'
                     style={{backgroundColor: "#2E0259"}}
-                    onClick={()=>{contextData.setCreateAccountFlag(true)}}
+                    onClick={()=>{contextData.setCreateAccountFlag(true);}}
                     >
                         Login
                 </button>
