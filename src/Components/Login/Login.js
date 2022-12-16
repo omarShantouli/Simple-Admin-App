@@ -25,7 +25,7 @@ export default function Login() {
         createUserWithEmailAndPassword(auth, email, password).then(()=>{
             contextData.setLoginFlag(false);
         }).catch(() => {
-            window.alert("ensure that email and password are filled and correct")
+            window.alert("Account is already registered… Please login")
           });
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
