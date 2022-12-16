@@ -11,9 +11,9 @@ export default function Login() {
     const storedPassword = localStorage.getItem('password') ? localStorage.getItem('password') : "";
     const [email, setEmail] = useState(storedEmail);
     const [password, setPassword] = useState(storedPassword);
-
     const auth = getAuth(app);
     const contextData = useContext(GlobalContext);
+    
 
     useEffect(()=>{
         setEmail("");
@@ -22,13 +22,18 @@ export default function Login() {
 
     function signUp()
     {
-        createUserWithEmailAndPassword(auth, email, password).then(()=>{
+       createUserWithEmailAndPassword(auth, email, password).then(()=>{
             contextData.setLoginFlag(false);
+            window.alert("Singed up Successfully");
         }).catch(() => {
-            window.alert("Account is already registered… Please login")
+            if(password.length < 6)
+             setTimeout(()=>{window.alert("Password must be at least 6 characters long")}, 1000)
+             else
+             window.alert("Account is already registered… Please login")
           });
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
+          
     }
 
     function signin()
@@ -37,7 +42,7 @@ export default function Login() {
             contextData.setLoginFlag(false);
         }).catch(() => {
             if(email !== "" && password !== "")
-             window.alert("incorrect email or password")
+             window.alert("The email address or password is incorrect. Please retry again...")
           });
 
           localStorage.setItem('email', email);
