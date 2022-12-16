@@ -19,24 +19,24 @@ export default function NavBar() {
    }
 
   return (
-    <div className='d-flex ps-5 pe-5' style={{backgroundColor: "#2E0259"}}>
-        <div className='text-white pt-2 pb-2 h2'>
+    <div className='d-flex navBar min-vw-100'>
+        <div className='text-white d-flex align-items-center justify-content-center h2'>
             React Auth
         </div>
         {
             contextData.loginFlag ?
-                <div className='ms-auto me-4 border-0  pt-3 pb-2 text-white h6'>
-                <button className='border-0 pt-2 text-white h6'
+                //<div className='ms-auto me-4 border-0  pt-3 pb-2 text-white h6'>
+                <button className='d-flex align-items-center justify-content-center h-100 border-0 text-white h6 pt-3 pb-3 ms-auto'
                     style={{backgroundColor: "#2E0259"}}
                     onClick={()=>{contextData.setCreateAccountFlag(true);}}
                     >
                         Login
                 </button>
-                </div>
+               // </div>
             :
             <div className='ms-auto me-4 border-0  pt-3 pb-2 text-white h6'>
                 <span className='me-4'>
-                    {localStorage.getItem('email').split('@')[0]}
+                    {localStorage.getItem('email').split('@')[0]}'s Profle
                 </span>
                 <button className='btn pt-2 text-white h6 active'
                     style={{backgroundColor: "#2E0259"}}

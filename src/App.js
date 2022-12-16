@@ -13,10 +13,10 @@ function App() {
 
   useEffect(()=>{
       if(localStorage.getItem('email') && localStorage.getItem('password'))
-    {
-      setLoginFlag(false);
-      setCreateAccountFlag(false);
-    }
+      {
+        setLoginFlag(false);
+        setCreateAccountFlag(false);
+      }
 
   }, [])
   
