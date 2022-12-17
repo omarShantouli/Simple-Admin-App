@@ -1,0 +1,9 @@
+input{
+    width : 30%;
+}
+
+@media all and (max-width: 758px){
+    input {
+        width: 230px;
+    }
+}

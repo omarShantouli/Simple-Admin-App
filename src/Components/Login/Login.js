@@ -5,6 +5,7 @@ import "bootstrap/scss/bootstrap.scss";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth"
 import app from '../../Utils/Firebase';
 import { GlobalContext } from '../../Utils/context';
+import LoginNav from "../NavBar/LoginNav"
 
 export default function Login() {
     const storedEmail = localStorage.getItem('email') ? localStorage.getItem('email') : "";
@@ -59,9 +60,10 @@ export default function Login() {
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
     }
-    console.log(incorrectPassEmailFlag);
 
   return (
+    <>
+        <LoginNav />
         <div className='container d-flex justify-content-center'>
             <div className='d-flex flex-column align-items-center mt-5 text-white p-3 w-25 rounded login'>
                 {
@@ -145,5 +147,6 @@ export default function Login() {
                 </form>
             </div>
         </div>
+        </>
   )
 }
