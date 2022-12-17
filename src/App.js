@@ -17,6 +17,7 @@ function App() {
       if(localStorage.getItem('email') && localStorage.getItem('password'))
       {
         setCreateAccountFlag(false);
+        setLoginFlag(false);
       }
 
   }, [])
