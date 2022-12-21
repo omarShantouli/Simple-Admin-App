@@ -40,15 +40,15 @@ export default function NavBar() {
       <Nav className="ms-auto profile">
         
 
-            <button className="btn pt-2 text-white h6 btn2" onClick={()=>{nav('/profile')}}>
+            <button className="btn pt-2 text-white h6 btn2 text-align-center userName-Home" onClick={()=>{nav('/profile')}}>
                 {localStorage?.getItem("email")?.split("@")[0]}'s Profle
             </button>
 
-            <button className="btn pt-2 text-white h6 me-4 btn2" onClick={()=>{nav('/')}}>
+            <button className="btn pt-2 text-white h6 me-4 btn2 text-align-center userName-Home" onClick={()=>{nav('/')}}>
                 Home
             </button>
 
-            <button className="btn pt-2 text-white h6 active" onClick={logOut}>
+            <button className="btn pt-2 text-white h6 active text-align-center" onClick={logOut}>
                 Logout
             </button>
         
@@ -57,27 +57,6 @@ export default function NavBar() {
     </Navbar.Collapse>
   </Navbar>
 </div>
-      {/* <div className="d-flex navBar min-vw-100">
-        <div className="text-white d-flex align-items-center justify-content-center h2">
-          React Auth
-        </div>
-          
-          <div className="border-0  pt-3 pb-2 text-white h6 profile">
-
-            <button className="btn pt-2 text-white h6 btn2" onClick={()=>{nav('/profile')}}>
-              {localStorage?.getItem("email")?.split("@")[0]}'s Profle
-            </button>
-
-            <button className="btn pt-2 text-white h6 me-4 btn2" onClick={()=>{nav('/')}}>
-              Home
-            </button>
-       
-            <button className="btn pt-2 text-white h6 active" onClick={logOut}>
-              Logout
-            </button>
-          </div>
-       
-      </div> */}
       </>
   );
 }
