@@ -3,6 +3,7 @@ import { getAuth, updatePassword } from "firebase/auth";
 import app from '../../Utils/Firebase';
 import "./Profile.scss"
 import NavBar from '../NavBar/NavBar';
+import Swal from 'sweetalert2'
 
 export default function Profile() {
     const [newPassword, setNewPassword] = useState("");
@@ -13,7 +14,16 @@ export default function Profile() {
         const user = auth.currentUser;
 
         updatePassword(user, newPassword).then(() => {
-        window.alert("Password changed successfully")
+        //window.alert("Password changed successfully")
+       // const Swal = require('sweetalert2')
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Password changed successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
         }).catch(() => {
         window.alert("something went wrong")
         });
